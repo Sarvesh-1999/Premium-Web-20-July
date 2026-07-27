@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* Decendent : targets direct and nested child */
+      section div {
+        background-color: yellow;
+      }
+
+      /* Child : targets direct child only */
+      section > div {
+        background-color: rebeccapurple;
+      }
+
+      /* General Siblings : targets the tags which after the closing tag */
+      section ~ div {
+        background-color: pink;
+      }
+
+      /* Adjacent Sibling : targets the tag which is immediate next to the closing tag */
+      section + div {
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Learn Combinator Selectors</h1>
+
+    <section>
+      <div>Div 1</div>
+      <div>Div 2</div>
+      <article>
+        <div>Div 3</div>
+        <div>Div 4</div>
+      </article>
+      <div>Div 5</div>
+    </section>
+    <div>Div 6</div>
+    <div>Div 7</div>
+    <aside>Aside 1</aside>
+    <div>Div 8</div>
+  </body>
+</html>
