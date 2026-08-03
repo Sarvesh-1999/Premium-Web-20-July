@@ -1,0 +1,37 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* CSS Variable : syntax is --variableName : value */
+:root {
+  --qsp: yellow;
+}
+
+.container {
+  height: 80vh;
+  width: 90vw;
+  background-color: var(--qsp);
+  margin: 0 auto;
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
+  align-items: center;
+  justify-items: center;
+}
+.item {
+  height: 100px;
+  width: 100px;
+  background-color: whitesmoke;
+  border: 1px solid black;
+}
+
+.item1 {
+  align-self: start; /* Y axis */
+  justify-self: start; /* X axis */
+}
+.item2 {
+  align-self: end;
+  justify-self: end;
+}
