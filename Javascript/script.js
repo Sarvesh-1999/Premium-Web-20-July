@@ -67,10 +67,82 @@
 // console.log(10 == "10"); // true <-- loosely comparison
 // console.log(10 === "10"); // false <-- strictly comparison
 
-//! HOISTING : moving declaration part at the top of the code internally 
+//! HOISTING : moving declaration part at the top of the code internally
 
-// var a = ud <--- due to hoisting
-console.log(a); // ud
-var a = 10
-console.log(a); // 10
+// // var a = ud <--- hoisted and intialized with ud
+// console.log(a); // ud
+// var a = 10;
+// console.log(a); // 10
 
+// // let b <---- Hoisted but cannot initailized due to Temporal Dead Zone (TDZ)
+// console.log(b); // error
+// let b = 20;
+// console.log(b); // 20
+
+//! VAR EXAMPLE
+// var a; //<---------------- declare
+// console.log(a); // ud
+// a = 10; //<--------------- initialize
+// console.log(a); // 10
+// var a; //<---------------- re-declare
+// console.log(a); // 10
+// a = 20; //<--------------- re-initialize
+// console.log(a); // 20
+
+// var b = 10; //<----------- declare & initialize
+// console.log(b); // 10
+// var b = 30; //<----------- re-declare & re-initialize
+// console.log(b); // 30
+
+//! LET EXAMPLE
+// let b;
+// console.log(b); // ud
+// b = 100;
+// console.log(b); // 100
+// // let b; //! SyntaxError: Identifier 'b' has already been declared
+// console.log(b); // 100
+// b = 200;
+// console.log(b); // 200
+
+// let c = 300;
+// console.log(c);
+// // let c = 400; //! SyntaxError: Identifier 'c' has already been declared
+// console.log(c);
+
+//! SCOPES EXAMPLE
+
+//! GLOBAL VARIABLES AND SCOPE EXAMPLES
+// var a = 10; // GLOBAL VARIABLE - GLOBAL SCOPE
+// let b = 20; // GLOBAL VARIABLE - SCRIPT SCOPE <- (TDZ)
+// const c = 30; // GLOBAL VARIABLE -  SCRIPT SCOPE <- (TDZ)
+
+// //! LOCAL VARIABLES AND SCOPES EXAMPLES
+// // in conditional OR loops (both same)
+// if (10 < 20) {
+//   var x = 100; // GLOBAL VARIABLE - GLOBAL SCOPE
+//   let y = 200; // LOCAL VARIABLE - BLOCK SCOPE
+//   const z = 300; // LOCAL VARIABLE - BLOCK SCOPE
+// }
+
+// in functions
+// function demo() {
+//   var m = 1000; // LOCAL VARIABLE - LOCAL SCOPE
+//   let n = 2000; // LOCAL VARIABLE - LOCAL SCOPE
+//   const o = 3000; // LOCAL VARIABLE - LOCAL SCOPE
+// }
+// demo();
+
+//! FUNCTIONS :  BLOCK OF CODE USED TO PERFORM SPECIFIC TASK
+// DRY PRINCIPLE  -> DONOT REPEAT YOURSELF
+
+//! 1) NAMED FUNCTION :  Function which has name
+//! NOTE: Only named function can be called before declaration (Hoisting)
+
+webDevelopment(); // due to hoisting
+
+function webDevelopment() {
+  console.log("HTML");
+  console.log("CSS");
+  console.log("JS");
+}
+webDevelopment();
