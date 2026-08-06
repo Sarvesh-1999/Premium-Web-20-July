@@ -138,11 +138,90 @@
 //! 1) NAMED FUNCTION :  Function which has name
 //! NOTE: Only named function can be called before declaration (Hoisting)
 
-webDevelopment(); // due to hoisting
+// webDevelopment(); // due to hoisting
 
-function webDevelopment() {
-  console.log("HTML");
-  console.log("CSS");
-  console.log("JS");
-}
-webDevelopment();
+// function webDevelopment() {
+//   console.log("HTML");
+//   console.log("CSS");
+//   console.log("JS");
+// }
+// webDevelopment();
+
+//! 2) ANONYMOUS FUNCTION : Function without name
+// function (){
+//    console.log("I am Anonymous");
+// }
+
+//! 3) FUNCTION EXPRESSION : Used to call Anonymous function
+// const f1 = function () {
+//   console.log("I am Anonymous called using Function Expression");
+// };
+// f1();
+
+//! 4) FUNCTION WITH ARGUEMENTS AND PARAMETERS
+// function sum(n1 = 0, n2 = 0) {
+//   console.log(n1 + n2);
+// }
+// sum(10, 20); // here, 10 and 20 are arguements
+
+//! 5) RETURN TYPE FUNCTION
+// function multiply(n1 = 1, n2 = 1) {
+//   let val = n1 * n2;
+//   return val; // 25
+// }
+// //! way 1
+// let x = multiply(5, 5);
+// console.log(x); //  25
+
+//! way 2
+// console.log(multiply(5, 5));
+
+//! 6) HIGHER ORDER FUNCTION AND CALLBACK FUNCTION
+//! HOF : a function which returns another function OR accepts a function as arguement OR both.
+
+//! CB : a function which passes as an arguement to another function
+// function HOF(cb) {
+//   return function B() {};
+// }
+// HOF(function A() {});
+
+//! 7) NESTED FUNCTION :
+
+// closure is a temporary memory which is created when child function having an access of parent function's properties and it gets distroyed after the execution of child function.
+
+// function Parent() {
+//   let money = 1000;
+//   console.log("I am Parent", money);
+
+//   function Child() {
+//     console.log("I am Child", money); // due to closure (Parent)
+//   }
+
+//   Child();
+// }
+
+// Parent();
+
+//! 8) Immediately Invoked Function Expression (IIFE)
+(function () {
+  console.log("I am IIFE");
+})();
+
+//! 9) ARROW FUNCTION
+const a1 = () => {
+  console.log("Arrow func");
+};
+a1();
+
+const a2 = () => console.log("Hii");
+a2();
+
+// EXPLICIT
+const a3 = () => {
+  return "Explicit";
+};
+console.log(a3());
+
+// IMPLICIT
+const a4 = (n1, n2) => n1 + n2;
+console.log(a4(10, 20));
