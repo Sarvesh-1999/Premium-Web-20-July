@@ -203,25 +203,198 @@
 // Parent();
 
 //! 8) Immediately Invoked Function Expression (IIFE)
-(function () {
-  console.log("I am IIFE");
-})();
+// (function () {
+//   console.log("I am IIFE");
+// })();
 
 //! 9) ARROW FUNCTION
-const a1 = () => {
-  console.log("Arrow func");
-};
-a1();
+// const a1 = () => {
+//   console.log("Arrow func");
+// };
+// a1();
 
-const a2 = () => console.log("Hii");
-a2();
+// const a2 = () => console.log("Hii");
+// a2();
 
-// EXPLICIT
-const a3 = () => {
-  return "Explicit";
-};
-console.log(a3());
+// // EXPLICIT
+// const a3 = () => {
+//   return "Explicit";
+// };
+// console.log(a3());
 
-// IMPLICIT
-const a4 = (n1, n2) => n1 + n2;
-console.log(a4(10, 20));
+// // IMPLICIT
+// const a4 = (n1, n2) => n1 + n2;
+// console.log(a4(10, 20));
+
+//! ARRAYS : collection of similar or different types of data
+// const arr1 = [10, 20, 30, 40];
+
+// array.length ---> no. of elements in an array
+// console.log(arr1.length); // 4
+
+//! ARRAY METHODS
+
+// // push() : adds new element at the end of an array
+// arr1.push(50);
+// console.log(arr1);
+
+// // pop() : removes last element
+// arr1.pop();
+// console.log(arr1);
+
+// // unshift() : adds new element at the start of an array
+// arr1.unshift(100);
+// console.log(arr1);
+
+// // shift() : removes first element
+// arr1.shift();
+// console.log(arr1);
+
+//! splice(pos , deleteCount , newElement)
+// const arr2 = [10, 20, 30, 40];
+// console.log(arr2);
+
+// arr2.splice(1, 1);
+// console.log(arr2);
+
+// arr2.splice(3, 0, 35);
+// console.log(arr2);
+
+// arr2.splice(1, 2, 25);
+// console.log(arr2);
+
+//! slice(startIndex, endIndex)
+// const arr3 = [100, 200, 300, 400];
+// console.log(arr3);
+
+// console.log(arr3.slice(1, 3));
+// console.log(arr3.slice(-3, -1));
+// console.log(arr3.slice(-3, 3));
+
+//! forEach()
+// const arr4 = [10, 20, 30, 40];
+
+// let val1 = arr4.forEach((ele, idx, array) => {
+//   // console.log(ele, idx, array);
+//   return ele * 5;
+// });
+// console.log(val1);
+
+// //! map()
+// let val2 = arr4.map((ele, idx, array) => {
+//   // console.log(ele, idx, array);
+//   return ele * 5;
+// });
+// console.log(val2);
+
+// //! filter()
+// let val3 = arr4.filter((ele, idx, array) => {
+//   return ele > 20;
+// });
+// console.log(val3);
+
+// //! find()
+// let val4 = arr4.find((ele, idx, array) => {
+//   return ele > 20;
+// });
+// console.log(val4);
+
+// //! findIndex()
+// let val5 = arr4.findIndex((ele, idx, array) => {
+//   return ele > 20;
+// });
+// console.log(val5);
+
+// //! reduce()
+// let val6 = arr4.reduce((acc, ele, idx, array) => {
+//   console.log(acc, ele);
+//   return acc + ele;
+// }, 0);
+// console.log(val6);
+
+//! OBJECTS
+// // CREATE
+// const obj1 = {
+//   firstname: "John",
+//   lastname: "Doe",
+//   age: 20,
+//   isAdmin: false,
+//   greet: function () {
+//     console.log("Welcome");
+//   },
+// };
+// console.log(obj1);
+
+// // READ
+// console.log(obj1.firstname);
+// obj1.greet();
+
+// // UPDATE
+// obj1.age = 28;
+// obj1.isAdmin = true;
+// console.log(obj1);
+
+// // ADD NEW PROPERTY
+// obj1.company = "QSP";
+// obj1.dummy = "dummy key";
+// console.log(obj1);
+
+// // DELETE
+// delete obj1.dummy;
+// console.log(obj1);
+
+//! OBJECT DESTRUCTURING
+// const simpleObject = {
+//   name: "John",
+//   age: 20,
+//   company: "HCL",
+// };
+
+// let { name, company, age } = simpleObject;
+
+// console.log(name);
+// console.log(age);
+
+// const complexObject = {
+//   name: "Jane",
+//   age: 25,
+//   address: {
+//     street: 4,
+//     city: "Noida",
+//     state: "UP",
+//   },
+// };
+
+// let {
+//   name: firstname,
+//   address: { city },
+// } = complexObject;
+// console.log(firstname, city);
+
+// //! ARRAY DESTRUCTRING
+// const simpleArray = [100, 200, 300, 400, 500];
+// let [a1, a2, a3, a4, a5] = simpleArray;
+// console.log(a1, a3, a5);
+
+// // skipping values
+// let [, b2, , , b5] = simpleArray;
+// console.log(b2, b5);
+
+// const complexArray = [10, 20, [1000, 2000, 3000]];
+// let [c1, c2, [c3, c4, c5]] = complexArray;
+// console.log(c1, c3, c5);
+
+
+//! STRING
+let str1 = 'John'
+let str2 = "Doe"
+let str3 = `Welcome
+Hii How are you? ${str1} ${str2}
+`
+// multi-line string
+// ${} <---- string interpolation
+
+console.log(str1);
+console.log(str2);
+console.log(str3);
+
