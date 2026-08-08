@@ -206,16 +206,114 @@
 // console.log(val6);
 
 //! ARRAY DESTRUCTURING
-let arr1 = [10, 20, 30, 40, 50];
+// let arr1 = [10, 20, 30, 40, 50];
 
-let [a1, a2, a3, a4, a5] = arr1;
-console.log(a2, a5);
+// let [a1, a2, a3, a4, a5] = arr1;
+// console.log(a2, a5);
 
-// skipping values
-let [, , b1, , b2] = arr1;
-console.log(b1, b2);
+// // skipping values
+// let [, , b1, , b2] = arr1;
+// console.log(b1, b2);
 
-//! nested array
-let arr2 = [100, 200, 300, [1000, 2000, 3000]];
-let [, x1, x2, [x3, , x4]] = arr2;
-console.log(x1, x2, x3, x4); // 200 300 1000 3000
+// //! nested array
+// let arr2 = [100, 200, 300, [1000, 2000, 3000]];
+// let [, x1, x2, [x3, , x4]] = arr2;
+// console.log(x1, x2, x3, x4); // 200 300 1000 3000
+
+//! OBJECTS
+
+// //! CREATE AN OBJECT
+// const obj1 = {
+//   id: 1,
+//   name: "John",
+//   age: 20,
+//   isAuthenticated: false,
+//   company: null,
+// };
+// console.log(obj1);
+
+// //! READ
+// console.log(obj1.name); // John
+// console.log(obj1.salary); // undefined
+
+// //! UPDATE
+// obj1.isAuthenticated = true;
+// console.log(obj1);
+
+// //! ADD NEW PROPERTY
+// obj1.dob = "01/01/2026";
+// obj1.dummy = "dummyKey"
+// console.log(obj1);
+
+// //! DELETE
+// delete obj1.dummy
+// console.log(obj1);
+
+//! OBJECT DESTRUCTURING
+// const obj2 = {
+//   firstname: "Jane",
+//   lastname: "Doe",
+//   age: 26,
+//   company: "HCL",
+// };
+
+// let { company, salary = "NA", firstname: fname, address: loc = "NA" } = obj2;
+// console.log(company, salary, fname, loc);
+
+// const obj3 = {
+//   name: "John",
+//   address: {
+//     city: "Noida",
+//     state: "UP",
+//     coordinates: { lat: "9876543487656", long: "0987654345678" },
+//   },
+// };
+// // city , long
+
+// let {
+//   address: {
+//     city,
+//     coordinates: { long },
+//   },
+// } = obj3;
+// console.log(city, long);
+
+//! PROMISE : A JavaScript Promise is an object representing a placeholder for a value that you don’t have yet, but expect to receive in the future.
+
+// let p1 = fetch("https://dummyjson.com/todos");
+
+// p1.then((resp) => {
+//   let p2 = resp.json();
+
+//   p2.then((data) => {
+//     console.log(data.todos);
+//   });
+
+//   p2.catch((error) => {
+//     console.log(error);
+//   });
+// });
+
+// p1.catch((error) => {
+//   console.log(error);
+// });
+
+//! ASYNC AND AWAIT FUNCTIONS
+// Async/Await is a newer, cleaner way to read and write Promises. Instead of linking long chains of .then(), it makes your asynchronous code look like normal, step-by-step code.
+
+// async: Put this keyword before a function to tell JavaScript: "Expect time-consuming tasks inside this function".
+
+// await: Put this keyword before a Promise to tell JavaScript: "Pause right here and wait for the data to arrive before moving to the next line"
+
+async function getTodos() {
+  try {
+    let resp = await fetch("https://dummyjson.com/todos");
+    let data = await resp.json();
+    console.log(data);
+  } catch (err) {
+    console.log(err);
+  }
+}
+getTodos();
+
+
